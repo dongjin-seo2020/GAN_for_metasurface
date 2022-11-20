@@ -21,7 +21,7 @@ def visualize_training_generator(generator, fig_path, cuda=False, n_row = 4, n_c
 
     paddings = (0, 0, 0, imgs.size(2)-1)
     imgs = F.pad(imgs, paddings, mode='reflect')
-    save_image(imgs, fig_path, n_row)
+    #save_image(imgs, fig_path, n_row)
     generator.train()
 
 
