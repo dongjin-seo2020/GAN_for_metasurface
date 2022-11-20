@@ -9,6 +9,8 @@ import torch
 import utils
 import scipy.io as io
 
+k = 10 # generator training number
+
 
 Tensor = torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor
 
@@ -84,7 +86,8 @@ def train(models, optimizers, dataloader, params):
     generator, discriminator = models
     optimizer_G, optimizer_D = optimizers
 
-    generator.train()
+    for i in range(k):
+        generator.train()
     discriminator.train()
 
     gen_loss_history = []
